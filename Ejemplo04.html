@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="lista">
+
+    </ul>
+</body>
+</html>
+<script src="assets/js/Libro.js"></script>
+<script src="assets/js/Persona.js"></script>
+<script src="assets/js/Prestamo.js"></script>
+<script>
+    //titulo, autor, categoria, añoPublicacion, ISBN, cantidad
+    const libro1 = new Libro("Programación en C#", "Ceballos", "Desarrollo de software", 2010, "1010-101010-1", 10);
+    const libro2 = new Libro("Como programar en Java", "Deitel", "Desarrollo de software", 2005, "1010-100102-2", 15)
+    const libro3 = new Libro("Javascript", "Deitel", "Desarrollo de software", 2005, "1010-100102-2", 5)
+
+    Libro.agregar(libro1);
+    Libro.agregar(libro2);
+    Libro.agregar(libro3);
+
+    const libroBusqueda = Libro.buscar(1);
+    console.log(libroBusqueda)
+    libroBusqueda.cantidad = 50;
+
+    console.log(Libro.libros)
+/*
+    Libro.libros.push(libro1)
+    Libro.libros.push(libro2)
+
+
+    const lista = document.querySelector('#lista');
+    let elementos = "";
+    for(let i = 0; i < Libro.libros.length; i++){
+        elementos = elementos + `<li>${Libro.libros[i].titulo}</li>`;
+    }
+
+    lista.innerHTML = elementos;
+   */
+    
+
+    //dui, nombre, apellido, direccion, telefono, correo
+    const persona1 = new Persona("12345678-0", "Denny", "Herrera", "San Salvador", "2222-2222", "correo@correo.com")
+
+    console.log(persona1);
+
+    const prestamo1 = new Prestamo(libro2, persona1);
+    const prestamo2 = new Prestamo(libro2, persona1);    
+
+    prestamo2.devolver();
+    prestamo2.devolver();
+    prestamo2.devolver();
+    prestamo2.devolver();
+    prestamo2.devolver();
+    prestamo2.devolver();
+    prestamo2.devolver();
+    console.log(prestamo1);
+
+</script>
