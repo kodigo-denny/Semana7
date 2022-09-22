@@ -37,4 +37,15 @@ class Libro{
     static buscar(id){
         return Libro.libros.find(b => b.id == id);
     }
+
+    static eliminar(id){
+        let index = Libro.libros.findIndex(b => b.id == id);
+
+        if(index == -1)
+            return false;
+        else{
+            Libro.libros.splice(index, 1);
+            return true;
+        }
+    }
 }
